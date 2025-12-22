@@ -10,7 +10,6 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "start": "vite preview --port 4173",
-    "postinstall": "npm run build",
     "server:dev": "tsx server/src/index.ts",
     "server:test": "vitest run",
     "server:lint": "eslint server/src --ext .ts",
