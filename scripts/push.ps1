@@ -28,5 +28,6 @@ if (-not ($remotes -match "^origin$")) {
 $cleanRepo = ($RepoUrl.Trim() -replace '[`"]','').TrimEnd('/')
 $authUrl = $cleanRepo.Replace("https://", "https://${UserName}:${Token}@")
 
+git remote set-url origin $cleanRepo
 git push $authUrl main
 git branch --set-upstream-to=origin/main main
