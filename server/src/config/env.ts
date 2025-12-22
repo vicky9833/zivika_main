@@ -1,0 +1,10 @@
+import dotenv from "dotenv";
+dotenv.config();
+
+export const env = {
+  port: Number(process.env.PORT || 8080),
+  nodeEnv: process.env.NODE_ENV || "development",
+  jwtSecret: process.env.JWT_SECRET || "change_this_secret",
+  databaseUrl: process.env.DATABASE_URL || "",
+  groqApiKey: process.env.GROQ_API_KEY || "",
+};
