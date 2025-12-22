@@ -15,7 +15,7 @@
     "server:test": "vitest run",
     "server:lint": "eslint server/src --ext .ts",
     "dev:full": "concurrently -n server,web -c green,blue \"npm:server:dev\" \"npm:dev\"",
-    "push:github": "powershell -ExecutionPolicy Bypass -File scripts/push.ps1"
+    "push:github": "powershell -ExecutionPolicy Bypass -File .\\scripts\\push.ps1"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
