@@ -15,6 +15,9 @@ import HealthAnalytics from "@/components/HealthAnalytics";
 
 const Index = () => {
   const [activeView, setActiveView] = useState<'home' | 'patient' | 'doctor' | 'locker' | 'wearable' | 'notifications' | 'language' | 'family' | 'analytics'>('home');
+  const redirectToPatientApp = () => {
+    window.location.assign("https://care.zivikalabs.com/");
+  };
 
   if (activeView === 'patient') {
     return <PatientDashboard onBack={() => setActiveView('home')} />;
@@ -50,7 +53,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
-      <HeroSection onViewDemo={(view) => setActiveView(view)} />
+      <HeroSection onViewDemo={(view) => view === 'patient' ? redirectToPatientApp() : setActiveView(view)} />
       
       {/* Enhanced Features Section */}
       <section className="py-20 px-4 max-w-7xl mx-auto">
@@ -212,7 +215,7 @@ const Index = () => {
             <Button 
               size="lg" 
               className="h-20 text-lg gradient-medical text-white hover:opacity-90 transition-all duration-300 transform hover:scale-105"
-              onClick={() => setActiveView('patient')}
+              onClick={redirectToPatientApp}
             >
               <Smartphone className="w-6 h-6 mr-3" />
               Patient Experience
