@@ -39,7 +39,7 @@ const products = [
     icon: ShieldCheck,
     color: "gradient-medical",
     accent: "text-primary",
-    bg: "bg-accent/30",
+    bg: "bg-primary/5",
     description:
       "India's DigiLocker for health, a lifelong digital health record linked to ABDM and ABHA. Every consultation, prescription, lab report and diagnosis stored permanently and portably. The patient carries their complete medical history to every doctor they ever visit, for the rest of their life.",
     highlights: [
@@ -114,14 +114,14 @@ const technologies = [
 
 const Product = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-white text-foreground">
       <SiteHeader />
 
       <main>
-        <section className="border-b border-border bg-gradient-to-br from-accent/30 via-background to-background">
+        <section className="border-b border-border bg-white">
           <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
             <Reveal className="max-w-4xl">
-              <Badge variant="outline" className="rounded-full border-primary/20 bg-background px-4 py-1 text-primary">
+              <Badge variant="outline" className="rounded-full border-primary/20 bg-white px-4 py-1 text-primary">
                 Product Description
               </Badge>
               <h1 className="mt-6 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
@@ -178,7 +178,7 @@ const Product = () => {
           </div>
         </section>
 
-        <section className="border-b border-border bg-accent/10">
+        <section className="border-b border-border bg-white">
           <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
             <Reveal className="max-w-3xl">
               <Badge variant="outline" className="rounded-full border-primary/20 px-4 py-1 text-primary">
@@ -244,23 +244,23 @@ const Product = () => {
           </div>
         </section>
 
-        <section className="bg-gradient-to-br from-[hsl(var(--medical-dark))] via-primary to-[hsl(var(--medical-blue))] text-primary-foreground">
+        <section className="border-t border-border bg-white text-foreground">
           <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-            <Reveal className="rounded-[2rem] border border-white/10 bg-white/10 p-8 sm:p-12 backdrop-blur-sm">
-              <div className="flex items-center gap-3 text-sm font-medium uppercase tracking-[0.18em] text-white">
+            <Reveal className="rounded-[2rem] border border-border bg-white p-8 sm:p-12">
+              <div className="flex items-center gap-3 text-sm font-medium uppercase tracking-[0.18em] text-primary">
                 <LockKeyhole className="h-4 w-4" />
                 Product philosophy
               </div>
               <h2 className="mt-5 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">
                 Every product should make care feel more continuous, not more fragmented.
               </h2>
-              <p className="mt-6 max-w-3xl text-base leading-8 text-white/80 sm:text-lg">
+              <p className="mt-6 max-w-3xl text-base leading-8 text-muted-foreground sm:text-lg">
                 That is why the scribe, locker, and copilot are designed to strengthen each other. The doctor does less
                 admin, the patient receives better follow-through, and the health system gains better-quality data over
                 time.
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                <Button asChild size="lg" className="rounded-full bg-white px-7 text-primary hover:bg-white/90">
+                <Button asChild size="lg" className="rounded-full gradient-medical px-7 text-white hover:opacity-90">
                   <Link to="/contact">
                     Start a conversation
                     <Pill className="h-4 w-4" />

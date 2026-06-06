@@ -49,14 +49,14 @@ const principles = [
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-white text-foreground">
       <SiteHeader />
 
       <main>
-        <section className="relative overflow-hidden border-b border-border bg-gradient-to-br from-accent/30 via-background to-background">
+        <section className="relative overflow-hidden border-b border-border bg-white">
           <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
             <Reveal className="max-w-4xl">
-              <Badge variant="outline" className="mb-6 rounded-full border-primary/20 bg-background px-4 py-1 text-primary">
+              <Badge variant="outline" className="mb-6 rounded-full border-primary/20 bg-white px-4 py-1 text-primary">
                 About Zivika Labs
               </Badge>
               <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
@@ -92,7 +92,7 @@ const About = () => {
             <Reveal>
               <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
                 {stats.map((stat, index) => (
-                  <Card key={stat.label} className="rounded-3xl border-border bg-accent/20 shadow-none">
+                  <Card key={stat.label} className="rounded-3xl border-border bg-white shadow-none">
                     <CardContent className="p-6">
                       <div className="text-sm uppercase tracking-[0.22em] text-muted-foreground">Stat {index + 1}</div>
                       <div className="mt-3 text-4xl font-semibold text-primary">{stat.value}</div>
@@ -105,7 +105,7 @@ const About = () => {
           </div>
         </section>
 
-        <section className="border-b border-border bg-accent/10">
+        <section className="border-b border-border bg-white">
           <div className="mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1.2fr_0.8fr] lg:px-8">
             <Reveal className="space-y-6">
               <Badge variant="outline" className="rounded-full border-primary/20 px-4 py-1 text-primary">
@@ -124,7 +124,7 @@ const About = () => {
                   <Reveal key={item.title} delayMs={index * 80}>
                     <Card className="h-full rounded-3xl border-border bg-background shadow-none">
                       <CardContent className="p-6">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/5 text-primary">
                           <item.icon className="h-6 w-6" />
                         </div>
                         <h3 className="mt-5 text-lg font-semibold text-foreground">{item.title}</h3>
@@ -140,7 +140,7 @@ const About = () => {
               <Card className="rounded-[2rem] border-border bg-background shadow-none">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-5">
-                    <div className="flex h-24 w-24 items-center justify-center rounded-[1.75rem] bg-accent/30">
+                    <div className="flex h-24 w-24 items-center justify-center rounded-[1.75rem] bg-primary/5">
                       <img src="/zivika-logo.svg" alt="Zivika Labs logo" className="h-16 w-16" />
                     </div>
                     <div>
@@ -153,7 +153,7 @@ const About = () => {
                     interviews before writing a single line of code. Top 25 out of 5000 at STPI AIoT. Building to
                     ensure every Indian gets access to intelligent healthcare regardless of where they live.
                   </p>
-                  <div className="mt-8 rounded-3xl bg-primary/5 p-6">
+                  <div className="mt-8 rounded-3xl border border-border bg-white p-6">
                     <div className="flex items-center gap-3 text-sm font-medium uppercase tracking-[0.18em] text-primary">
                       <Award className="h-4 w-4" />
                       Builder credibility
@@ -196,16 +196,16 @@ const About = () => {
           </div>
         </section>
 
-        <section className="bg-gradient-to-br from-[hsl(var(--medical-dark))] via-primary to-[hsl(var(--medical-blue))] text-primary-foreground">
+        <section className="border-t border-border bg-white text-foreground">
           <div className="mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1fr_0.9fr] lg:px-8">
             <Reveal>
-              <Badge variant="outline" className="rounded-full border-white/20 px-4 py-1 text-white">
+              <Badge variant="outline" className="rounded-full border-primary/20 px-4 py-1 text-primary">
                 Why Zivika Exists
               </Badge>
               <h2 className="mt-6 text-3xl font-semibold tracking-tight sm:text-4xl">
                 Healthcare transformation needs infrastructure, not just another interface.
               </h2>
-              <p className="mt-6 max-w-2xl text-base leading-8 text-white/80 sm:text-lg">
+              <p className="mt-6 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
                 The long-term opportunity is not simply digitizing appointments or creating one more patient app. It is
                 creating a trusted operating system for care delivery, one that reduces administrative burden for
                 doctors, gives patients portable records for life, and compounds clinical data into intelligent support
@@ -214,13 +214,13 @@ const About = () => {
             </Reveal>
 
             <Reveal delayMs={120}>
-              <Card className="rounded-[2rem] border-white/10 bg-white/10 shadow-none backdrop-blur-sm">
+              <Card className="rounded-[2rem] border-border bg-white shadow-none">
                 <CardContent className="p-8">
-                  <div className="flex items-center gap-3 text-sm font-medium uppercase tracking-[0.18em] text-white">
+                  <div className="flex items-center gap-3 text-sm font-medium uppercase tracking-[0.18em] text-primary">
                     <Building2 className="h-4 w-4" />
                     Long-term ambition
                   </div>
-                  <p className="mt-5 text-sm leading-8 text-white/80">
+                  <p className="mt-5 text-sm leading-8 text-muted-foreground">
                     Over time, Zivika aims to become the data and intelligence layer that powers better care
                     coordination, better doctor productivity, and eventually AI-native access for the hundreds of
                     millions of Indians currently left outside the system.

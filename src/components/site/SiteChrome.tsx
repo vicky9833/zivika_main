@@ -17,7 +17,7 @@ export const SiteHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/80 bg-background/95 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-border bg-white">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <div onClick={() => setIsOpen(false)}>
           <BrandLogo />
@@ -30,7 +30,7 @@ export const SiteHeader = () => {
               to={item.to}
               className={({ isActive }) =>
                 cn(
-                  "rounded-full px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-primary/8 hover:text-foreground",
+                  "rounded-full px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-primary/5 hover:text-foreground",
                   isActive && "bg-primary/10 text-primary"
                 )
               }
@@ -63,7 +63,7 @@ export const SiteHeader = () => {
       </div>
 
       {isOpen && (
-        <div className="border-t border-border bg-background md:hidden">
+        <div className="border-t border-border bg-white md:hidden">
           <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4 sm:px-6">
             {navItems.map((item) => (
               <NavLink
@@ -72,7 +72,7 @@ export const SiteHeader = () => {
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
                   cn(
-                    "rounded-2xl px-4 py-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-primary/8 hover:text-foreground",
+                    "rounded-2xl px-4 py-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-primary/5 hover:text-foreground",
                     isActive && "bg-primary/10 text-primary"
                   )
                 }
@@ -100,7 +100,7 @@ export const SiteHeader = () => {
 
 export const SiteFooter = () => {
   return (
-    <footer className="border-t border-border bg-gradient-to-br from-background via-background to-accent/20 text-foreground">
+    <footer className="border-t border-border bg-white text-foreground">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.4fr_0.8fr_0.8fr] lg:px-8">
         <div className="space-y-4">
           <BrandLogo compact />

@@ -55,15 +55,15 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen gradient-light">
+    <div className="min-h-screen bg-white">
       <SiteHeader />
       <HeroSection onViewDemo={(view) => view === 'patient' ? redirectToPatientApp() : setActiveView(view)} />
       
       {/* Enhanced Features Section */}
       <section className="py-20 px-4 max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4 text-primary border-primary/20">
-            🚀 Transforming Healthcare in India
+          <Badge variant="outline" className="mb-4 border-primary/20 bg-white text-primary">
+            Transforming Healthcare in India
           </Badge>
           <h2 className="text-4xl font-bold text-foreground mb-6">
             AI-Powered Healthcare for Everyone
@@ -75,7 +75,7 @@ const Index = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <Card className="group hover:shadow-xl transition-all duration-300 border border-border bg-white/75 backdrop-blur-sm shadow-none">
+          <Card className="group transition-all duration-300 border border-border bg-white shadow-none">
             <CardContent className="p-6 text-center">
               <div className="w-16 h-16 mx-auto mb-4 gradient-medical rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <Brain className="w-8 h-8 text-white" />
@@ -85,9 +85,9 @@ const Index = () => {
             </CardContent>
           </Card>
 
-          <Card className="group hover:shadow-xl transition-all duration-300 border border-border bg-white/75 backdrop-blur-sm shadow-none">
+          <Card className="group transition-all duration-300 border border-border bg-white shadow-none">
             <CardContent className="p-6 text-center">
-              <div className="w-16 h-16 mx-auto mb-4 gradient-digital-twin rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 mx-auto mb-4 gradient-medical rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <FileText className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-3 text-foreground">Digital Health Records</h3>
@@ -95,7 +95,7 @@ const Index = () => {
             </CardContent>
           </Card>
 
-          <Card className="group hover:shadow-xl transition-all duration-300 border border-border bg-white/75 backdrop-blur-sm shadow-none">
+          <Card className="group transition-all duration-300 border border-border bg-white shadow-none">
             <CardContent className="p-6 text-center">
               <div className="w-16 h-16 mx-auto mb-4 gradient-medical rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <Activity className="w-8 h-8 text-white" />
@@ -105,9 +105,9 @@ const Index = () => {
             </CardContent>
           </Card>
 
-          <Card className="group hover:shadow-xl transition-all duration-300 border border-border bg-white/75 backdrop-blur-sm shadow-none">
+          <Card className="group transition-all duration-300 border border-border bg-white shadow-none">
             <CardContent className="p-6 text-center">
-              <div className="w-16 h-16 mx-auto mb-4 gradient-wearable rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 mx-auto mb-4 gradient-medical rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <Watch className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-3 text-foreground">IoT Wearables</h3>
@@ -117,8 +117,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* New Enhanced Features Section */}
-      <section className="py-20 px-4 gradient-light">
+      <section className="py-20 px-4 bg-white border-t border-border">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-6">Advanced Healthcare Features</h2>
@@ -126,7 +125,7 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="group hover:shadow-xl transition-all duration-300 border border-border bg-white/75 backdrop-blur-sm cursor-pointer shadow-none" 
+            <Card className="group transition-all duration-300 border border-border bg-white shadow-none cursor-pointer" 
                   onClick={() => setActiveView('notifications')}>
               <CardContent className="p-6 text-center">
                 <div className="w-16 h-16 mx-auto mb-4 gradient-medical rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -137,10 +136,10 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-xl transition-all duration-300 border border-border bg-white/75 backdrop-blur-sm cursor-pointer shadow-none"
+            <Card className="group transition-all duration-300 border border-border bg-white shadow-none cursor-pointer"
                   onClick={() => setActiveView('language')}>
               <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 mx-auto mb-4 gradient-digital-twin rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 mx-auto mb-4 gradient-medical rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <Globe className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-foreground">Multi-language Support</h3>
@@ -148,7 +147,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-xl transition-all duration-300 border border-border bg-white/75 backdrop-blur-sm cursor-pointer shadow-none"
+            <Card className="group transition-all duration-300 border border-border bg-white shadow-none cursor-pointer"
                   onClick={() => setActiveView('family')}>
               <CardContent className="p-6 text-center">
                 <div className="w-16 h-16 mx-auto mb-4 gradient-medical rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -159,10 +158,10 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-xl transition-all duration-300 border border-border bg-white/75 backdrop-blur-sm cursor-pointer shadow-none"
+            <Card className="group transition-all duration-300 border border-border bg-white shadow-none cursor-pointer"
                   onClick={() => setActiveView('analytics')}>
               <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 mx-auto mb-4 gradient-wearable rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 mx-auto mb-4 gradient-medical rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <TrendingUp className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-foreground">Health Analytics</h3>
@@ -173,11 +172,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Target Audience Section */}
-      <section className="py-20 px-4 gradient-light">
+      <section className="py-20 px-4 bg-white border-t border-border">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-6">Built for India's Healthcare Needs</h2>
+            <h2 className="text-4xl font-bold text-foreground mb-6">Built for India&apos;s Healthcare Needs</h2>
             <p className="text-xl text-muted-foreground">Serving patients, doctors, and caregivers across urban, semi-urban, and rural India</p>
           </div>
 
@@ -191,7 +189,7 @@ const Index = () => {
             </div>
 
             <div className="text-center">
-              <div className="w-24 h-24 mx-auto mb-6 gradient-digital-twin rounded-full flex items-center justify-center">
+              <div className="w-24 h-24 mx-auto mb-6 gradient-medical rounded-full flex items-center justify-center">
                 <Stethoscope className="w-12 h-12 text-white" />
               </div>
               <h3 className="text-2xl font-semibold mb-4 text-foreground">Doctors</h3>
@@ -199,7 +197,7 @@ const Index = () => {
             </div>
 
             <div className="text-center">
-              <div className="w-24 h-24 mx-auto mb-6 gradient-wearable rounded-full flex items-center justify-center">
+              <div className="w-24 h-24 mx-auto mb-6 gradient-medical rounded-full flex items-center justify-center">
                 <Heart className="w-12 h-12 text-white" />
               </div>
               <h3 className="text-2xl font-semibold mb-4 text-foreground">Caregivers</h3>
@@ -245,7 +243,7 @@ const Index = () => {
 
             <Button 
               size="lg" 
-              className="h-20 text-lg gradient-wearable text-white hover:opacity-90 transition-all duration-300 transform hover:scale-105"
+              className="h-20 text-lg gradient-medical text-white hover:opacity-90 transition-all duration-300 transform hover:scale-105"
               onClick={() => setActiveView('wearable')}
             >
               <Watch className="w-6 h-6 mr-3" />
@@ -255,12 +253,9 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-background border-t border-border">
+      <section className="py-20 px-4 bg-white border-t border-border">
         <div className="max-w-6xl mx-auto">
           <Reveal className="text-center mb-14">
-            <Badge variant="outline" className="mb-4 text-primary border-primary/20">
-              New Website Pages
-            </Badge>
             <h2 className="text-4xl font-bold text-foreground mb-6">Explore the full Zivika story</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Learn who we are building for, how the product ecosystem works, and how to get in touch with the team.
@@ -269,7 +264,7 @@ const Index = () => {
 
           <div className="grid gap-6 md:grid-cols-3">
             <Reveal delayMs={60}>
-              <Card className="h-full border-border bg-white/80 rounded-3xl shadow-none">
+              <Card className="h-full border-border bg-white rounded-3xl shadow-none">
                 <CardContent className="p-8">
                   <div className="text-sm uppercase tracking-[0.18em] text-primary font-semibold">About</div>
                   <h3 className="mt-4 text-2xl font-semibold text-foreground">Why Zivika exists</h3>
@@ -284,7 +279,7 @@ const Index = () => {
             </Reveal>
 
             <Reveal delayMs={120}>
-              <Card className="h-full border-border bg-white/80 rounded-3xl shadow-none">
+              <Card className="h-full border-border bg-white rounded-3xl shadow-none">
                 <CardContent className="p-8">
                   <div className="text-sm uppercase tracking-[0.18em] text-primary font-semibold">Product</div>
                   <h3 className="mt-4 text-2xl font-semibold text-foreground">Three products, one system</h3>
@@ -299,7 +294,7 @@ const Index = () => {
             </Reveal>
 
             <Reveal delayMs={180}>
-              <Card className="h-full border-border bg-white/80 rounded-3xl shadow-none">
+              <Card className="h-full border-border bg-white rounded-3xl shadow-none">
                 <CardContent className="p-8">
                   <div className="text-sm uppercase tracking-[0.18em] text-primary font-semibold">Contact</div>
                   <h3 className="mt-4 text-2xl font-semibold text-foreground">Start a conversation</h3>

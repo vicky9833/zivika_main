@@ -47,14 +47,14 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-white text-foreground">
       <SiteHeader />
 
       <main>
-        <section className="border-b border-border bg-gradient-to-br from-accent/30 via-background to-background">
+        <section className="border-b border-border bg-white">
           <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
             <Reveal className="max-w-4xl">
-              <Badge variant="outline" className="rounded-full border-primary/20 bg-background px-4 py-1 text-primary">
+              <Badge variant="outline" className="rounded-full border-primary/20 bg-white px-4 py-1 text-primary">
                 Contact
               </Badge>
               <h1 className="mt-6 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
@@ -163,7 +163,7 @@ const Contact = () => {
 
             <div className="space-y-6">
               <Reveal delayMs={80}>
-                <Card className="rounded-[2rem] border-border bg-accent/15 shadow-none">
+                <Card className="rounded-[2rem] border-border bg-white shadow-none">
                   <CardContent className="p-8">
                     <div className="flex items-center gap-3">
                       <img src="/zivika-logo.svg" alt="Zivika Labs logo" className="h-12 w-12" />
