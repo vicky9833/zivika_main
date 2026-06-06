@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Menu, MoveUpRight, X } from "lucide-react";
 
+import BrandLogo from "@/components/site/BrandLogo";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -16,19 +17,11 @@ export const SiteHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-border/80 bg-background/95 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <Link to="/" className="flex items-center gap-3" onClick={() => setIsOpen(false)}>
-          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-950 text-sm font-semibold text-white">
-            ZL
-          </div>
-          <div>
-            <div className="text-sm font-semibold uppercase tracking-[0.24em] text-teal-700">
-              Zivika Labs
-            </div>
-            <div className="text-xs text-slate-500">India's Intelligent Health OS</div>
-          </div>
-        </Link>
+        <div onClick={() => setIsOpen(false)}>
+          <BrandLogo />
+        </div>
 
         <nav className="hidden items-center gap-2 md:flex">
           {navItems.map((item) => (
@@ -37,8 +30,8 @@ export const SiteHeader = () => {
               to={item.to}
               className={({ isActive }) =>
                 cn(
-                  "rounded-full px-4 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900",
-                  isActive && "bg-slate-100 text-slate-950"
+                  "rounded-full px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-primary/8 hover:text-foreground",
+                  isActive && "bg-primary/10 text-primary"
                 )
               }
             >
@@ -48,20 +41,20 @@ export const SiteHeader = () => {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          <Button asChild variant="outline" className="rounded-full border-slate-300">
+          <Button asChild variant="outline" className="rounded-full border-primary/25 text-primary hover:bg-primary/5 hover:text-primary">
             <a href="https://care.zivikalabs.com/" target="_blank" rel="noreferrer">
               Patient App
               <MoveUpRight className="h-4 w-4" />
             </a>
           </Button>
-          <Button asChild className="rounded-full bg-teal-600 text-white hover:bg-teal-700">
+          <Button asChild className="rounded-full gradient-medical text-white hover:opacity-90">
             <Link to="/contact">Talk to Zivika</Link>
           </Button>
         </div>
 
         <button
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 text-slate-700 md:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border text-foreground md:hidden"
           onClick={() => setIsOpen((value) => !value)}
           aria-label="Toggle navigation"
         >
@@ -70,7 +63,7 @@ export const SiteHeader = () => {
       </div>
 
       {isOpen && (
-        <div className="border-t border-slate-200 bg-white md:hidden">
+        <div className="border-t border-border bg-background md:hidden">
           <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4 sm:px-6">
             {navItems.map((item) => (
               <NavLink
@@ -79,21 +72,21 @@ export const SiteHeader = () => {
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
                   cn(
-                    "rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900",
-                    isActive && "bg-slate-100 text-slate-950"
+                    "rounded-2xl px-4 py-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-primary/8 hover:text-foreground",
+                    isActive && "bg-primary/10 text-primary"
                   )
                 }
               >
                 {item.label}
               </NavLink>
             ))}
-            <Button asChild variant="outline" className="mt-2 rounded-2xl border-slate-300">
+            <Button asChild variant="outline" className="mt-2 rounded-2xl border-primary/25 text-primary hover:bg-primary/5 hover:text-primary">
               <a href="https://care.zivikalabs.com/" target="_blank" rel="noreferrer">
                 Patient App
                 <MoveUpRight className="h-4 w-4" />
               </a>
             </Button>
-            <Button asChild className="rounded-2xl bg-teal-600 text-white hover:bg-teal-700">
+            <Button asChild className="rounded-2xl gradient-medical text-white hover:opacity-90">
               <Link to="/contact" onClick={() => setIsOpen(false)}>
                 Talk to Zivika
               </Link>
@@ -107,26 +100,24 @@ export const SiteHeader = () => {
 
 export const SiteFooter = () => {
   return (
-    <footer className="border-t border-slate-200 bg-slate-950 text-slate-200">
+    <footer className="border-t border-border bg-gradient-to-br from-background via-background to-accent/20 text-foreground">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.4fr_0.8fr_0.8fr] lg:px-8">
         <div className="space-y-4">
-          <div className="text-sm font-semibold uppercase tracking-[0.24em] text-teal-300">
-            Zivika Labs
-          </div>
-          <h3 className="max-w-xl text-2xl font-semibold leading-tight text-white">
+          <BrandLogo compact />
+          <h3 className="max-w-xl text-2xl font-semibold leading-tight text-foreground">
             Building clinical infrastructure that feels trustworthy, human, and ready for India at scale.
           </h3>
-          <p className="max-w-2xl text-sm leading-7 text-slate-400">
+          <p className="max-w-2xl text-sm leading-7 text-muted-foreground">
             From AI clinical documentation to lifelong health records and patient copilots, Zivika connects doctors,
             patients, and national health rails through real clinical data.
           </p>
         </div>
 
         <div className="space-y-4">
-          <div className="text-sm font-semibold text-white">Explore</div>
-          <div className="flex flex-col gap-3 text-sm text-slate-400">
+          <div className="text-sm font-semibold text-foreground">Explore</div>
+          <div className="flex flex-col gap-3 text-sm text-muted-foreground">
             {navItems.map((item) => (
-              <Link key={item.to} to={item.to} className="transition-colors hover:text-white">
+              <Link key={item.to} to={item.to} className="transition-colors hover:text-primary">
                 {item.label}
               </Link>
             ))}
@@ -134,12 +125,12 @@ export const SiteFooter = () => {
         </div>
 
         <div className="space-y-4">
-          <div className="text-sm font-semibold text-white">Contact</div>
-          <div className="space-y-3 text-sm text-slate-400">
-            <a href="mailto:vikas@zivikalabs.com" className="block transition-colors hover:text-white">
+          <div className="text-sm font-semibold text-foreground">Contact</div>
+          <div className="space-y-3 text-sm text-muted-foreground">
+            <a href="mailto:vikas@zivikalabs.com" className="block transition-colors hover:text-primary">
               vikas@zivikalabs.com
             </a>
-            <a href="https://zivikalabs.com" target="_blank" rel="noreferrer" className="block transition-colors hover:text-white">
+            <a href="https://zivikalabs.com" target="_blank" rel="noreferrer" className="block transition-colors hover:text-primary">
               zivikalabs.com
             </a>
             <div>Bangalore, Karnataka, India</div>

@@ -47,20 +47,20 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
 
       <main>
-        <section className="border-b border-slate-200 bg-[radial-gradient(circle_at_top_left,_rgba(13,148,136,0.12),_transparent_26%),linear-gradient(180deg,#f9fffe_0%,#ffffff_72%)]">
+        <section className="border-b border-border bg-gradient-to-br from-accent/30 via-background to-background">
           <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
             <Reveal className="max-w-4xl">
-              <Badge variant="outline" className="rounded-full border-teal-200 px-4 py-1 text-teal-700">
+              <Badge variant="outline" className="rounded-full border-primary/20 bg-background px-4 py-1 text-primary">
                 Contact
               </Badge>
-              <h1 className="mt-6 text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
+              <h1 className="mt-6 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
                 Let&apos;s Build This Together.
               </h1>
-              <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600 sm:text-xl">
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-muted-foreground sm:text-xl">
                 Whether you are a doctor wanting to try Zivika, an investor who believes in this vision, a researcher
                 who wants to collaborate, or an institution that wants to partner, we want to hear from you.
               </p>
@@ -68,19 +68,19 @@ const Contact = () => {
           </div>
         </section>
 
-        <section className="border-b border-slate-200 bg-white">
+        <section className="border-b border-border bg-background">
           <div className="mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
             <Reveal>
-              <Card className="rounded-[2rem] border-slate-200 shadow-none">
+              <Card className="rounded-[2rem] border-border shadow-none">
                 <CardContent className="p-8 sm:p-10">
-                  <div className="flex items-center gap-3 text-sm font-medium uppercase tracking-[0.18em] text-teal-700">
+                  <div className="flex items-center gap-3 text-sm font-medium uppercase tracking-[0.18em] text-primary">
                     <Sparkles className="h-4 w-4" />
                     Start the conversation
                   </div>
                   <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
                     <div className="grid gap-6 sm:grid-cols-2">
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-slate-700" htmlFor="fullName">
+                        <label className="text-sm font-medium text-foreground" htmlFor="fullName">
                           Full Name
                         </label>
                         <Input
@@ -89,11 +89,11 @@ const Contact = () => {
                           onChange={(event) => setFormValues((current) => ({ ...current, fullName: event.target.value }))}
                           placeholder="Your full name"
                           required
-                          className="h-12 rounded-2xl border-slate-200"
+                          className="h-12 rounded-2xl border-border"
                         />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-slate-700" htmlFor="email">
+                        <label className="text-sm font-medium text-foreground" htmlFor="email">
                           Email
                         </label>
                         <Input
@@ -103,14 +103,14 @@ const Contact = () => {
                           onChange={(event) => setFormValues((current) => ({ ...current, email: event.target.value }))}
                           placeholder="you@example.com"
                           required
-                          className="h-12 rounded-2xl border-slate-200"
+                          className="h-12 rounded-2xl border-border"
                         />
                       </div>
                     </div>
 
                     <div className="grid gap-6 sm:grid-cols-2">
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-slate-700" htmlFor="phone">
+                        <label className="text-sm font-medium text-foreground" htmlFor="phone">
                           Phone (optional)
                         </label>
                         <Input
@@ -118,13 +118,13 @@ const Contact = () => {
                           value={formValues.phone}
                           onChange={(event) => setFormValues((current) => ({ ...current, phone: event.target.value }))}
                           placeholder="+91"
-                          className="h-12 rounded-2xl border-slate-200"
+                          className="h-12 rounded-2xl border-border"
                         />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-slate-700">I am a</label>
+                        <label className="text-sm font-medium text-foreground">I am a</label>
                         <Select value={interest} onValueChange={setInterest}>
-                          <SelectTrigger className="h-12 rounded-2xl border-slate-200">
+                          <SelectTrigger className="h-12 rounded-2xl border-border">
                             <SelectValue placeholder="Choose one" />
                           </SelectTrigger>
                           <SelectContent>
@@ -139,7 +139,7 @@ const Contact = () => {
                     </div>
 
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-slate-700" htmlFor="message">
+                      <label className="text-sm font-medium text-foreground" htmlFor="message">
                         Message
                       </label>
                       <Textarea
@@ -148,11 +148,11 @@ const Contact = () => {
                         onChange={(event) => setFormValues((current) => ({ ...current, message: event.target.value }))}
                         placeholder="Tell us what you are looking to explore with Zivika."
                         required
-                        className="min-h-[180px] rounded-3xl border-slate-200 p-4"
+                        className="min-h-[180px] rounded-3xl border-border p-4"
                       />
                     </div>
 
-                    <Button type="submit" size="lg" className="rounded-full bg-teal-600 px-7 text-white hover:bg-teal-700">
+                    <Button type="submit" size="lg" className="rounded-full gradient-medical px-7 text-white hover:opacity-90">
                       Send Message
                       <Send className="h-4 w-4" />
                     </Button>
@@ -163,34 +163,37 @@ const Contact = () => {
 
             <div className="space-y-6">
               <Reveal delayMs={80}>
-                <Card className="rounded-[2rem] border-slate-200 bg-slate-50/70 shadow-none">
+                <Card className="rounded-[2rem] border-border bg-accent/15 shadow-none">
                   <CardContent className="p-8">
-                    <div className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">Contact details</div>
+                    <div className="flex items-center gap-3">
+                      <img src="/zivika-logo.svg" alt="Zivika Labs logo" className="h-12 w-12" />
+                      <div className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Contact details</div>
+                    </div>
                     <div className="mt-6 space-y-5">
-                      <a href="mailto:vikas@zivikalabs.com" className="flex items-start gap-4 text-slate-700 transition-colors hover:text-slate-950">
-                        <Mail className="mt-1 h-5 w-5 text-teal-700" />
+                      <a href="mailto:vikas@zivikalabs.com" className="flex items-start gap-4 text-muted-foreground transition-colors hover:text-foreground">
+                        <Mail className="mt-1 h-5 w-5 text-primary" />
                         <div>
-                          <div className="text-sm font-medium text-slate-500">Email</div>
-                          <div className="mt-1 text-base font-medium">vikas@zivikalabs.com</div>
+                          <div className="text-sm font-medium text-muted-foreground">Email</div>
+                          <div className="mt-1 text-base font-medium text-foreground">vikas@zivikalabs.com</div>
                         </div>
                       </a>
-                      <a href="https://zivikalabs.com" target="_blank" rel="noreferrer" className="flex items-start gap-4 text-slate-700 transition-colors hover:text-slate-950">
-                        <Phone className="mt-1 h-5 w-5 text-teal-700" />
+                      <a href="https://zivikalabs.com" target="_blank" rel="noreferrer" className="flex items-start gap-4 text-muted-foreground transition-colors hover:text-foreground">
+                        <Phone className="mt-1 h-5 w-5 text-primary" />
                         <div>
-                          <div className="text-sm font-medium text-slate-500">Website</div>
-                          <div className="mt-1 text-base font-medium">zivikalabs.com</div>
+                          <div className="text-sm font-medium text-muted-foreground">Website</div>
+                          <div className="mt-1 text-base font-medium text-foreground">zivikalabs.com</div>
                         </div>
                       </a>
-                      <div className="flex items-start gap-4 text-slate-700">
-                        <MapPin className="mt-1 h-5 w-5 text-teal-700" />
+                      <div className="flex items-start gap-4 text-muted-foreground">
+                        <MapPin className="mt-1 h-5 w-5 text-primary" />
                         <div>
-                          <div className="text-sm font-medium text-slate-500">Location</div>
-                          <div className="mt-1 text-base font-medium">Bangalore, Karnataka, India</div>
+                          <div className="text-sm font-medium text-muted-foreground">Location</div>
+                          <div className="mt-1 text-base font-medium text-foreground">Bangalore, Karnataka, India</div>
                         </div>
                       </div>
                     </div>
 
-                    <Button asChild variant="outline" className="mt-8 rounded-full border-slate-300">
+                    <Button asChild variant="outline" className="mt-8 rounded-full border-primary/20 text-primary hover:bg-primary/5 hover:text-primary">
                       <a href="https://www.linkedin.com/company/zivikalabs" target="_blank" rel="noreferrer">
                         LinkedIn
                         <Linkedin className="h-4 w-4" />
@@ -201,10 +204,10 @@ const Contact = () => {
               </Reveal>
 
               <Reveal delayMs={140}>
-                <Card className="rounded-[2rem] border-slate-200 bg-slate-950 text-white shadow-none">
+                <Card className="rounded-[2rem] border-border gradient-medical text-white shadow-none">
                   <CardContent className="p-8">
-                    <div className="text-sm font-semibold uppercase tracking-[0.18em] text-teal-300">What to expect</div>
-                    <p className="mt-4 text-sm leading-8 text-slate-300">
+                    <div className="text-sm font-semibold uppercase tracking-[0.18em] text-white/90">What to expect</div>
+                    <p className="mt-4 text-sm leading-8 text-white/90">
                       We are especially interested in conversations with frontline doctors, hospital networks, digital
                       health partners, investors aligned with deep-tech healthcare, and researchers exploring clinical AI
                       in India.
@@ -216,10 +219,10 @@ const Contact = () => {
           </div>
         </section>
 
-        <section className="bg-white">
+        <section className="bg-background">
           <div className="mx-auto max-w-5xl px-4 py-20 text-center sm:px-6 lg:px-8">
             <Reveal>
-              <p className="text-3xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
+              <p className="text-3xl font-semibold leading-tight tracking-tight text-foreground sm:text-4xl lg:text-5xl">
                 &quot;India&apos;s healthcare problem is not going to be solved by better apps. It is going to be solved by
                 building the right infrastructure and having the right people believe in it early enough to shape
                 it.&quot;
