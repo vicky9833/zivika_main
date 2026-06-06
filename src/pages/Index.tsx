@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -12,6 +13,8 @@ import NotificationCenter from "@/components/NotificationCenter";
 import LanguageSelector from "@/components/LanguageSelector";
 import FamilyHealthManager from "@/components/FamilyHealthManager";
 import HealthAnalytics from "@/components/HealthAnalytics";
+import Reveal from "@/components/site/Reveal";
+import { SiteFooter, SiteHeader } from "@/components/site/SiteChrome";
 
 const Index = () => {
   const [activeView, setActiveView] = useState<'home' | 'patient' | 'doctor' | 'locker' | 'wearable' | 'notifications' | 'language' | 'family' | 'analytics'>('home');
@@ -53,6 +56,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+      <SiteHeader />
       <HeroSection onViewDemo={(view) => view === 'patient' ? redirectToPatientApp() : setActiveView(view)} />
       
       {/* Enhanced Features Section */}
@@ -251,16 +255,68 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-12 px-4 bg-gray-900 text-white">
-        <div className="max-w-6xl mx-auto text-center">
-          <h3 className="text-2xl font-bold mb-4">Zivika Labs</h3>
-          <p className="text-gray-400 mb-6">Transforming healthcare through AI, IoT, and digital innovation</p>
-          <p className="text-sm text-gray-500">
-            "Zivika Labs isn't just digitizing healthcare it's reimagining it for Bharat: local, deeply personal, and smarter every day. It learns from every heartbeat, every symptom, to bring tomorrow's healthcare to every Indian, everywhere."
-          </p>
+      <section className="py-20 px-4 bg-white border-t border-slate-200">
+        <div className="max-w-6xl mx-auto">
+          <Reveal className="text-center mb-14">
+            <Badge variant="outline" className="mb-4 text-primary border-primary/20">
+              New Website Pages
+            </Badge>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Explore the full Zivika story</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Learn who we are building for, how the product ecosystem works, and how to get in touch with the team.
+            </p>
+          </Reveal>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            <Reveal delayMs={60}>
+              <Card className="h-full border-slate-200 bg-slate-50/80 rounded-3xl shadow-none">
+                <CardContent className="p-8">
+                  <div className="text-sm uppercase tracking-[0.18em] text-teal-700 font-semibold">About</div>
+                  <h3 className="mt-4 text-2xl font-semibold text-slate-950">Why Zivika exists</h3>
+                  <p className="mt-4 text-sm leading-7 text-slate-600">
+                    Read the founder story, market context, and the clinical infrastructure vision shaping the company.
+                  </p>
+                  <Button asChild variant="outline" className="mt-8 rounded-full border-slate-300">
+                    <Link to="/about">Open About</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            </Reveal>
+
+            <Reveal delayMs={120}>
+              <Card className="h-full border-slate-200 bg-slate-50/80 rounded-3xl shadow-none">
+                <CardContent className="p-8">
+                  <div className="text-sm uppercase tracking-[0.18em] text-teal-700 font-semibold">Product</div>
+                  <h3 className="mt-4 text-2xl font-semibold text-slate-950">Three products, one system</h3>
+                  <p className="mt-4 text-sm leading-7 text-slate-600">
+                    See how the AI Clinical Scribe, Health Locker, and AI Health Copilot fit together as one ecosystem.
+                  </p>
+                  <Button asChild variant="outline" className="mt-8 rounded-full border-slate-300">
+                    <Link to="/product">Open Product</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            </Reveal>
+
+            <Reveal delayMs={180}>
+              <Card className="h-full border-slate-200 bg-slate-50/80 rounded-3xl shadow-none">
+                <CardContent className="p-8">
+                  <div className="text-sm uppercase tracking-[0.18em] text-teal-700 font-semibold">Contact</div>
+                  <h3 className="mt-4 text-2xl font-semibold text-slate-950">Start a conversation</h3>
+                  <p className="mt-4 text-sm leading-7 text-slate-600">
+                    Reach out if you are a doctor, investor, researcher, or institution interested in collaborating.
+                  </p>
+                  <Button asChild className="mt-8 rounded-full bg-teal-600 text-white hover:bg-teal-700">
+                    <Link to="/contact">Open Contact</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            </Reveal>
+          </div>
         </div>
-      </footer>
+      </section>
+
+      <SiteFooter />
     </div>
   );
 };
